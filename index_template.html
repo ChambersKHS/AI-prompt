@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Prompt Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <p class="eyebrow">Staff Resource &middot; Updated Automatically</p>
+  <h1>AI Prompt Register</h1>
+  <p>A shared log of AI prompts, platforms and plans that have worked well in lessons. Submitted by staff, sorted by subject. Find one that fits, copy it, adapt it.</p>
+</header>
+
+<nav class="toolbar" id="filters">
+  <button class="filter-btn active" data-subject="all">All subjects</button>
+  <!-- BUILD:FILTERS -->
+</nav>
+
+<main class="register" id="register">
+  <!-- BUILD:ENTRIES -->
+</main>
+
+<footer class="site-footer">
+  <p>Got a prompt worth sharing? <a class="cta" href="ISSUE_FORM_URL_PLACEHOLDER">Add it to the register &rarr;</a></p>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll('.filter-btn');
+const entries = document.querySelectorAll('.entry');
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const subj = btn.dataset.subject;
+    entries.forEach(e => {
+      e.style.display = (subj === 'all' || e.dataset.subject === subj) ? '' : 'none';
+    });
+  });
+});
+</script>
+
+</body>
+</html>
