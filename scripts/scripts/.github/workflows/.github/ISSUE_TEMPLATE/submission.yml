@@ -1,0 +1,73 @@
+name: Submit an AI prompt
+description: Share an AI prompt, platform, or plan that worked well in a lesson.
+title: "[Submission] "
+labels: ["submission"]
+body:
+  - type: dropdown
+    id: subject
+    attributes:
+      label: Subject
+      options:
+        - English
+        - Maths
+        - Science
+        - History
+        - Geography
+        - Languages
+        - Art
+        - Music
+        - PE
+        - Computing
+        - RE
+        - PSHE
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Short title
+      description: A few words describing what this is for, e.g. "Essay feedback for GCSE English"
+      placeholder: "Essay feedback for GCSE English"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform / tool used
+      options:
+        - ChatGPT
+        - Claude
+        - Gemini
+        - Copilot
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: The prompt
+      description: Paste the actual prompt text you used.
+      placeholder: "You are an examiner marking GCSE English essays against AQA criteria..."
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: What worked well / how you used it
+      description: Context for other staff — year group, how you adapted the output, any caveats.
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Your name (optional)
+      description: Leave blank to submit anonymously.
+    validations:
+      required: false
